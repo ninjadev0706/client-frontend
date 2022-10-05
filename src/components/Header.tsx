@@ -63,8 +63,8 @@ const Header = () => {
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
+              fillRule="evenodd"
+              clipRule="evenodd"
               d="M9.525 0.225L11.775 2.475C12.075 2.775 12.075 3.225 11.775 3.525L10.425 4.875L7.125 1.575L8.475 0.225C8.775 -0.075 9.225 -0.075 9.525 0.225ZM0.225 8.475L6.075 2.625L9.375 5.925L3.525 11.775C3.375 11.925 3.225 12 3 12H0.75C0.3 12 0 11.7 0 11.25V9C0 8.775 0.075 8.625 0.225 8.475Z"
               fill="#184681"
             ></path>
@@ -110,7 +110,7 @@ const Header = () => {
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <g clip-path="url(#clip0)">
+            <g clipPath="url(#clip0)">
               <rect
                 x="2"
                 y="4"
