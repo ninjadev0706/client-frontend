@@ -1,39 +1,39 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-export const useOnClickOutside = (ref: unknown, handler: unknown) => {
-  useEffect(
-    () => {
-      const listener = (event: { target: any }) => {
-        // Do nothing if clicking ref's element or descendent elements
-        if (!ref.current || ref.current.contains(event.target)) {
-          return;
-        }
-        handler(event);
-      };
-      document.addEventListener("mousedown", listener);
-      document.addEventListener("touchstart", listener);
-      return () => {
-        document.removeEventListener("mousedown", listener);
-        document.removeEventListener("touchstart", listener);
-      };
-    },
-    // Add ref and handler to effect dependencies
-    // It's worth noting that because passed in handler is a new ...
-    // ... function on every render that will cause this effect ...
-    // ... callback/cleanup to run every render. It's not a big deal ...
-    // ... but to optimize you can wrap handler in useCallback before ...
-    // ... passing it into this hook.
-    [ref, handler],
-  );
-};
 
 const Index = () => {
   const ref = useRef();
   const [showModal, setShowModal] = useState(false);
   const [amount, setAmountReg] = useState(0);
   const [usermail, setUsermailReg] = useState("");
-
+  
+  const useOnClickOutside = (ref: any, handler: any) => {
+    useEffect(
+      () => {
+        const listener = (event: { target: any }) => {
+          // Do nothing if clicking ref's element or descendent elements
+          if (!ref.current || ref.current.contains(event.target)) {
+            return;
+          }
+          handler(event);
+        };
+        document.addEventListener("mousedown", listener);
+        document.addEventListener("touchstart", listener);
+        return () => {
+          document.removeEventListener("mousedown", listener);
+          document.removeEventListener("touchstart", listener);
+        };
+      },
+      // Add ref and handler to effect dependencies
+      // It's worth noting that because passed in handler is a new ...
+      // ... function on every render that will cause this effect ...
+      // ... callback/cleanup to run every render. It's not a big deal ...
+      // ... but to optimize you can wrap handler in useCallback before ...
+      // ... passing it into this hook.
+      [ref, handler],
+    );
+  };
   const setContext = () => {
     const GlobalUserMail = React.createContext(usermail);
     const GlobalAmount = React.createContext(amount);
