@@ -25,7 +25,7 @@ import { Link } from "react-router-dom";
 const Index = () => {
   const ref = useRef();
 
-  const useOnClickOutside = (ref: unknown, handler: unknown) => {
+  const useOnClickOutside = (ref: any, handler: any) => {
     useEffect(
       () => {
         const listener = (event: { target: any }) => {
