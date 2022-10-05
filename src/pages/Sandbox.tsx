@@ -10,6 +10,7 @@ import Registration from "./Registration";
 import PersonalDetail from "./PersonalDetail";
 import Proposal from "./Proposal";
 import History from "./History";
+// import { valueContainerCSS } from "react-select/dist/declarations/src/components/containers";
 
 const Sandbox = () => {
   const [processstep, setProcessStep] = useState(0);
@@ -55,6 +56,9 @@ const Sandbox = () => {
         responseType: "json",
         url: API_URL + "/savedata",
         data: totaldata,
+        headers: {
+          'Access-Control-Allow-Origin' : '*'
+        }
       }).then((response) => {
         alert(
           "You have submitted your request, once we have completed our checks we will approve your loan",
