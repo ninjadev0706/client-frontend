@@ -56,9 +56,9 @@ const Sandbox = () => {
         responseType: "json",
         url: API_URL + "/savedata",
         data: totaldata,
-        headers: {
-          'Access-Control-Allow-Origin' : '*'
-        }
+        // headers: {
+        //   'Access-Control-Allow-Origin' : '*'
+        // }
       }).then((response) => {
         alert(
           "You have submitted your request, once we have completed our checks we will approve your loan",
