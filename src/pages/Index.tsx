@@ -359,7 +359,7 @@ const Index = () => {
       {showModal ? (
         <>
           <div className="static justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none bg-[#00000099]">
-            <div className="flex relative  rounded-lg w-auto my-6 mx-auto bg-[#143b6b]" ref={ref}>
+            <div className="flex relative  rounded-lg w-auto my-6 mx-auto bg-[#143b6b]" ref={ref.current}>
               {/*content*/}
               <button className="absolute top-0 right-0 pt-4 pr-1" onClick={()=>alldisable()} type="button">
                 <svg
